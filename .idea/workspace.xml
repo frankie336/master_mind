@@ -4,29 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="First">
-      <change afterPath="$PROJECT_DIR$/configs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/processed/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/raw/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/data_merger_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/data_merger_service/news_data_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/lagged_feature_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/price_feature_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/technicalIn_dicator_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/fetch_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/indicators_merger_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/predictor_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setting up.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/common_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/feature_engineering_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/fetch_service_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/predictor_service_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volumes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="CategoricalFeatureService">
+      <change afterPath="$PROJECT_DIR$/orchestrators/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev/master_mind_feat" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -59,12 +43,42 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.cat_feature_service.executor": "Run",
     "Python.setting up.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "feature/master__mind__feat"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="cat_feature_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="master_mind" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/services/feature_engineering_service" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/feature_engineering_service/cat_feature_service.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cat_feature_service" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,11 +103,40 @@
       <option name="project" value="LOCAL" />
       <updated>1703190017433</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Building">
+      <option name="closed" value="true" />
+      <created>1703192453641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703192453641</updated>
+    </task>
+    <task id="LOCAL-00003" summary="CategoricalFeatureService">
+      <option name="closed" value="true" />
+      <created>1703227990654</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703227990654</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First" />
-    <option name="LAST_COMMIT_MESSAGE" value="First" />
+    <MESSAGE value="Building" />
+    <MESSAGE value="CategoricalFeatureService" />
+    <option name="LAST_COMMIT_MESSAGE" value="CategoricalFeatureService" />
   </component>
 </project>
