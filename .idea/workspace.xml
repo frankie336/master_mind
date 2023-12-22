@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="CategoricalFeatureService">
-      <change afterPath="$PROJECT_DIR$/orchestrators/__init__.py" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +23,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/master_mind_feat" />
+        <entry key="$PROJECT_DIR$" value="dev/master_mind_dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/setting up.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -50,6 +53,12 @@
     "git-widget-placeholder": "feature/master__mind__feat"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/configs" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="cat_feature_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="master_mind" />
@@ -119,7 +128,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703227990654</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CategoricalFeatureService">
+      <option name="closed" value="true" />
+      <created>1703228938721</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703228938721</updated>
+    </task>
+    <task id="LOCAL-00005" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1703231053106</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703231053106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +162,7 @@
     <MESSAGE value="First" />
     <MESSAGE value="Building" />
     <MESSAGE value="CategoricalFeatureService" />
-    <option name="LAST_COMMIT_MESSAGE" value="CategoricalFeatureService" />
+    <MESSAGE value="README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md" />
   </component>
 </project>
