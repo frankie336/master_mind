@@ -24,6 +24,7 @@ class CategoricalFeatureService:
         return self.data
 
     def encode_events_and_impact(self):
+
         # Encode events
         unique_events = self.data['event'].dropna().unique()
         event_map = {event: idx for idx, event in enumerate(unique_events, start=1)}
