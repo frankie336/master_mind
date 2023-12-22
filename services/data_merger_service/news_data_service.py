@@ -1,3 +1,4 @@
+
 class TradingNewsDataMergerService:
     def __init__(self, start_date, end_date, data, news_data, config, unseen_data=False, live_data=False):
         self.end_date = end_date
