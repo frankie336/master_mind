@@ -15,7 +15,8 @@ class TestNewsFetcherService(unittest.TestCase):
         self.end_date = '2023-01-31'
         self.sentiment_analyzer_service = SentimentAnalyzerService()
         self.fetcher = NewsFetcherService(
-            self.sentiment_analyzer_service, self.api_key, self.start_date, self.end_date, self.start_date, self.end_date)
+            self.sentiment_analyzer_service,
+            self.api_key, self.start_date, self.end_date, self.start_date, self.end_date)
 
     def test_initialization(self):
         # Test the initialization
