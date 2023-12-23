@@ -1,3 +1,4 @@
+import time
 from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
 from services.fetch_service.news_fetcher_service import NewsFetcherService
 
@@ -33,15 +34,13 @@ class DataOrchestrator:
 
 if __name__ == '__main__':
     # Create instances of your services
-    price_data_fetcher = PriceDataFetcherService(api_key='your_api_key')
-    calendar_data_fetcher = CalendarDataFetcherService(api_key='your_api_key')
-    news_fetcher = NewsFetcherService(api_key='your_api_key')
-    econ_indicator_fetcher = EconIndicatorFetcherService(api_key='your_api_key')
-    feature_engineer = FeatureEngineeringService()
-    data_saver = DataSaverService()
-
+    price_data_fetcher = ForexPriceDataChunkFetcher(api_key='your_api_key')
+    #calendar_data_fetcher = CalendarDataFetcherService(api_key='your_api_key')
+    #news_fetcher = NewsFetcherService(api_key='your_api_key')
+    #econ_indicator_fetcher = EconIndicatorFetcherService(api_key='your_api_key')
+    #feature_engineer = FeatureEngineeringService()
+    #data_saver = DataSaverService()
     # Instantiate the orchestrator
-    orchestrator = Orchestrator(price_data_fetcher, calendar_data_fetcher, news_fetcher, econ_indicator_fetcher, feature_engineer, data_saver)
-
+    #orchestrator = Orchestrator(price_data_fetcher, calendar_data_fetcher, news_fetcher, econ_indicator_fetcher, feature_engineer, data_saver)
     # Execute the data fetching and saving process
-    orchestrator.fetch_and_save_data()
+    #orchestrator.fetch_and_save_data()
