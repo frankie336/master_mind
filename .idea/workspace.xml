@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="news_data_service.py">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/fetch_service/news_fetcher_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/fetch_service_tests/test_news_getcher_service.py" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="TestNewsFetcherService">
+      <change afterPath="$PROJECT_DIR$/orchestrators/orchestrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/common/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/common/tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/data/raw" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/configs" />
@@ -173,7 +171,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703287542866</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="TestNewsFetcherService">
+      <option name="closed" value="true" />
+      <created>1703297372088</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703297372088</updated>
+    </task>
+    <task id="LOCAL-00008" summary="TestNewsFetcherService">
+      <option name="closed" value="true" />
+      <created>1703297503199</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703297503199</updated>
+    </task>
+    <task id="LOCAL-00009" summary="TestNewsFetcherService">
+      <option name="closed" value="true" />
+      <created>1703297794622</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703297794622</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +227,7 @@
     <MESSAGE value="CategoricalFeatureService" />
     <MESSAGE value="README.md" />
     <MESSAGE value="news_data_service.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="news_data_service.py" />
+    <MESSAGE value="TestNewsFetcherService" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestNewsFetcherService" />
   </component>
 </project>
