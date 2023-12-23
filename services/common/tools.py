@@ -15,11 +15,33 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import requests
 import torch
+from textblob import TextBlob
 
 from configs.config import ForexMastermindConfig
 from services.common.constants import API_KEY
 
 logger = logging.getLogger(__name__)
+
+
+class SentimentAnalyzerService:
+    """
+    Performs sentiment analysis on text data.
+    """
+
+    @staticmethod
+    def analyze_sentiment(text):
+        """
+        Analyzes the sentiment of the given text.
+
+        Args:
+            text (str): The text to analyze.
+
+        Returns:
+            float: The sentiment polarity score (-1.0 to 1.0).
+        """
+        blob = TextBlob(text)
+
+        return blob.sentiment.polarity
 
 
 class DateRangeGenerator:
