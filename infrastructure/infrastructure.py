@@ -8,7 +8,6 @@ from services.fetch_service.Indicators_service import EconomicIndicatorsFetcherS
 from services.common.tools import SentimentAnalyzerService
 from services.feature_engineering_service.feature_engineering_service import FeatureEngineeringService
 from services.common.tools import DataFrameSaver
-from orchestrators.data_orchestrator import DataOrchestrator
 
 
 class DataOrchestratorBuilder:

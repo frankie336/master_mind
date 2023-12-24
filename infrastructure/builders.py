@@ -1,5 +1,4 @@
 # infrastructure/builders.py
-from orchestrators.data_orchestrator import DataOrchestrator
 from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
 from services.fetch_service.economic_calendar_service import EconomicCalendarFetcherService
 from services.fetch_service.Indicators_service import EconomicIndicatorsFetcherService
@@ -81,6 +80,8 @@ class DataOrchestratorBuilder:
         econ_indicator_fetcher = self.build_econ_indicator_fetcher()
         feature_engineer = self.build_feature_engineer()
         data_saver = self.build_data_saver()
+
+        from orchestrators.data_orchestrator import DataOrchestrator
 
         # Create and return a DataOrchestrator instance with all services
         return DataOrchestrator(
