@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="infrastructure.py">
-      <change afterPath="$PROJECT_DIR$/infrastructure/builders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/infrastructure.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/infrastructure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/model_service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/model_service/deep_nn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orchestrators/data_orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrators/data_orchestrator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/master_mind_dev" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in test_news_getcher_service.py.executor": "Run",
-    "Python.cat_feature_service.executor": "Run",
-    "Python.data_orchestrator.executor": "Run",
-    "Python.setting up.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/master__mind__feat",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in test_news_getcher_service.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cat_feature_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_orchestrator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.setting up.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/master__mind__feat&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />
@@ -143,9 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test_news_getcher_service.py" />
+        <item itemvalue="Python.data_orchestrator" />
+        <item itemvalue="Python.cat_feature_service" />
         <item itemvalue="Python.data_orchestrator" />
         <item itemvalue="Python tests.Python tests in test_news_getcher_service.py" />
-        <item itemvalue="Python.cat_feature_service" />
       </list>
     </recent_temporary>
   </component>
