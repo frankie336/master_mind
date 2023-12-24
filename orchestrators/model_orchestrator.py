@@ -1,6 +1,6 @@
 import time
 import torch
-from configs.path_builder import ForexMastermindConfig
+from configs.path_builder import PathBuilder
 from services.common.tools import FFDataLoader
 from services.model_service.simple_classifier_service import SimpleBinaryClassifier
 from services.training_service.data_preprocessor_service import DataPreprocessor
@@ -12,7 +12,7 @@ from services.common.tools import ModelVersionService
 
 
 class ModelOrchestrator:
-    def __init__(self, sample_size, batch_size, config, model_config=None, file_path=None, version=None,
+    def __init__(self, sample_size, batch_size, path_builder, model_config=None, file_path=None, version=None,
                  in_google_colab=False, google_model_path=None, google_reg_path=None,
                  model_version_service=None):
         self.sample_size = sample_size
@@ -24,14 +24,15 @@ class ModelOrchestrator:
         self.google_reg_path = google_reg_path
         self.model_config = model_config
         self.model_version_service = ModelVersionService
+        self.path_builder = path_builder
 
         # Configuration settings
-        self.config = config if config is not None else ForexMastermindConfig()
+        self.path_builder = path_builder if path_builder is not None else PathBuilder()
         self.model_config = model_config  # Separate configuration for model-related settings
         self.model_version_service = model_version_service if model_version_service is not None else ModelVersionService(
-            config=self.config, in_google_colab=in_google_colab)
+            config=self.path_builder, in_google_colab=in_google_colab)
 
-        self.data_preprocessor = DataPreprocessor(config=self.config, batch_size=self.batch_size, in_google_colab=in_google_colab)
+        self.data_preprocessor = DataPreprocessor(config=self.path_builder, batch_size=self.batch_size, in_google_colab=in_google_colab)
 
     def run(self, epochs=2, learning_rate=0.001, checkpoint_interval=5):
         # Assuming FFDataLoader and other services are appropriately defined
@@ -49,19 +50,19 @@ class ModelOrchestrator:
 
         # Execute Training Service with model_config
         model_training_service = ModelTrainingService(model=model, train_loader=train_loader, model_config=self.model_config,
-                                                      config=self.config, model_version_service=self.model_version_service,
+                                                      path_builder=self.path_builder, model_version_service=self.model_version_service,
                                                       google_model_path=self.google_model_path, google_reg_path=self.google_reg_path)
         trained_model, best_loss, total_samples_trained, training_time = model_training_service.train_model()
 
         # Execute Testing Service
         model_testing_service = ModelTestingService(model=trained_model,
-                                                    testing_loader=test_loader, config=self.config, in_google_colab=self.in_google_colab)
+                                                    testing_loader=test_loader, path_builder=self.config, in_google_colab=self.in_google_colab)
         model, avg_test_loss, test_accuracy = model_testing_service.test_model()
 
         # Execute Evaluation Service
         model_evaluation_service = ModelEvaluationService(model=trained_model, batch_size=self.batch_size,
                                                           get_hyperparameters_str=trained_model.get_hyperparameters_str(), training_time=training_time,
-                                                          eval_loader=val_loader, features=features, config=self.config,
+                                                          eval_loader=val_loader, features=features, path_builder=self.path_builder,
                                                           in_google_colab=self.in_google_colab, google_model_path=self.google_model_path,
                                                           google_reg_path=self.google_reg_path)
         model_evaluation_service.evaluate(test_avg_test_loss=avg_test_loss, test_accuracy=test_accuracy)
@@ -70,9 +71,9 @@ class ModelOrchestrator:
 # Usage Example (Uncomment to test)
 if __name__ == '__main__':
 
-     config = ForexMastermindConfig()
-     file_path = config.get_next_data_path(data_type='ForexData', training_data_version='11')
+     path_builder = PathBuilder()
+     file_path = path_builder.get_next_data_path(data_type='ForexData', training_data_version='11')
 
-     orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, config=config, model_config=model_config, file_path=file_path,
+     orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, path_builder=config, model_config=model_config, file_path=file_path,
                                       in_google_colab=False, google_model_path=None, google_reg_path=None)
      orchestrator.run()

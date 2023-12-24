@@ -1,7 +1,7 @@
 # orchestrators/data_orchestrator.py
 from infrastructure.builders import DataOrchestratorBuilder  # Adjust the import path as necessary
 from services.common.constants import API_KEY, START_DATE, END_DATE
-from configs.path_builder import ForexMastermindConfig
+from configs.path_builder import PathBuilder
 
 
 import logging
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         end_date=END_DATE,
         ec_start_date='2023-01-01',
         ec_end_date='2023-12-31',
-        config=ForexMastermindConfig()
+        config=PathBuilder()
     )
     # Build the DataOrchestrator with all the services configured
     orchestrator = builder.build()

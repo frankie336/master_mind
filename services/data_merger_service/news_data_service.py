@@ -1,5 +1,5 @@
 import pandas as pd
-from configs.path_builder import ForexMastermindConfig
+from configs.path_builder import PathBuilder
 
 
 class TradingNewsDataMergerService:
@@ -11,8 +11,8 @@ class TradingNewsDataMergerService:
         self.data = data
         self.news_data = news_data
         self.config = config
-        self.config = ForexMastermindConfig(start_date=self.start_date, end_date=self.end_date,
-                                            unseen_start_date=self.start_date, unseen_end_date=self.end_date)
+        self.config = PathBuilder(start_date=self.start_date, end_date=self.end_date,
+                                  unseen_start_date=self.start_date, unseen_end_date=self.end_date)
 
         # TODO: WE NEED TO COME UP WITH SOME CLEAN METHOD OF PASSING TRAINING DATA VERSION HERE
         self.data_path = self.config.get_next_data_path(data_type='ForexData', training_data_version='11',

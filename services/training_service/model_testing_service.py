@@ -6,10 +6,10 @@ from tqdm import tqdm
 
 
 class ModelTestingService:
-    def __init__(self, model, testing_loader, config, in_google_colab=False):
+    def __init__(self, model, testing_loader, path_builder, in_google_colab=False):
         self.model = model
         self.testing_loader = testing_loader  # DataLoader instance
-        self.config = config
+        self.path_builder = path_builder
         self.in_google_colab = in_google_colab
         self.criterion = nn.CrossEntropyLoss() if config['loss'] == 'CE' else nn.BCELoss()
 

@@ -18,7 +18,7 @@ from services.common.tools import DataHashService
 
 class ModelEvaluationService:
 
-    def __init__(self, model,  batch_size, get_hyperparameters_str, training_time, eval_loader, features, config,
+    def __init__(self, model,  batch_size, get_hyperparameters_str, training_time, eval_loader, features, path_builder,
                  model_version_service=None, in_google_colab=False, google_model_path=None, google_reg_path=None):
 
         self.model = model
@@ -28,7 +28,7 @@ class ModelEvaluationService:
         self.eval_loader = eval_loader
         self.features = features
         #self.total_samples_trained = total_samples_trained
-        self.config = config
+        self.path_builder = path_builder
         self.model_version_service = model_version_service
         self.in_google_colab = in_google_colab
         self.google_model_path = google_model_path
@@ -116,7 +116,7 @@ class ModelEvaluationService:
     def _save_model(self, accuracy):
 
         model_version = self.model_version_service.get_next_model_version()
-        model_directory = self.config.get_model_directory(in_google_colab=self.in_google_colab)
+        model_directory = self.path_builder.get_model_directory(in_google_colab=self.in_google_colab)
         model_filename = f"IntraDayForexPredictor_v{model_version}.pt"
         model_path = os.path.join(model_directory, model_filename)
         torch.save(self.model.state_dict(), model_path)

@@ -3,13 +3,13 @@ from services.common.tools import DateTimeFeatureService
 from services.feature_engineering_service.technicalIn_dicator_service import TechnicalIndicatorService
 from services.feature_engineering_service.target_feature_service import TargetFeatureService
 from services.feature_engineering_service.price_feature_service import PriceFeatureService
-from configs.path_builder import ForexMastermindConfig
+from configs.path_builder import PathBuilder
 
 
 class FeatureEngineeringService:
     def __init__(self, live_data=False):
         self.live_data = live_data
-        self.config = ForexMastermindConfig()
+        self.config = PathBuilder()
 
     def create_lagged_features(self, data, n_lags=60):
         """

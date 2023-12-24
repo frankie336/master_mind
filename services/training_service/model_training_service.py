@@ -11,14 +11,14 @@ from tqdm import tqdm
 
 
 class ModelTrainingService:
-    def __init__(self, model, train_loader, model_config, config,
+    def __init__(self, model, train_loader, model_config, path_builder,
                  model_version_service, google_model_path=False,
-                 google_reg_path=False,in_google_colab=False):
+                 google_reg_path=False, in_google_colab=False):
 
         self.model = model
         self.train_loader = train_loader
         self.model_config = model_config
-        self.config = config
+        self.path_builder = path_builder
         self.model_version_service = model_version_service
         self.in_google_colab = in_google_colab
         self.google_model_path = google_model_path
@@ -35,7 +35,6 @@ class ModelTrainingService:
             self.model.parameters(),
             lr=self.model_config.get('learning_rate', 0.001)
         )
-
 
     def train_model(self):
         start_time = datetime.now()
@@ -92,22 +91,14 @@ class ModelTrainingService:
 
     def save_checkpoint(self, epoch, loss):
         """Save model checkpoint."""
-        try:
+        checkpoint_dir = self.path_builder.get_checkpoint_directory()  # Get the dynamic checkpoint directory
+        checkpoint_filename = f"checkpoint_epoch_{epoch}_loss_{loss:.4f}.pth"
+        checkpoint_path = os.path.join(checkpoint_dir, checkpoint_filename)
 
-            model_save_path = self.config.get('model_save_path', './models/')
-
-            os.makedirs(model_save_path, exist_ok=True)  # Ensure directory exists
-
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            checkpoint_filename = f"checkpoint_epoch_{epoch}_loss_{loss:.4f}_{timestamp}.pth"
-            path = os.path.join(model_save_path, checkpoint_filename)
-
-            torch.save({
-                'epoch': epoch,
-                'model_state_dict': self.model.state_dict(),
-                'optimizer_state_dict': self.optimizer.state_dict(),
-                'loss': loss,
-            }, path)
-            self.logger.info(f"Checkpoint saved: {path}")
-        except Exception as e:
-            self.logger.error(f"Failed to save checkpoint at {path}: {str(e)}")
+        torch.save({
+            'epoch': epoch,
+            'model_state_dict': self.model.state_dict(),
+            'optimizer_state_dict': self.optimizer.state_dict(),
+            'loss': loss,
+        }, checkpoint_path)
+        self.logger.info(f"Checkpoint saved: {checkpoint_path}")

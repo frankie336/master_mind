@@ -17,7 +17,7 @@ import requests
 import torch
 from textblob import TextBlob
 
-from configs.path_builder import ForexMastermindConfig
+from configs.path_builder import PathBuilder
 from services.common.constants import API_KEY
 
 logger = logging.getLogger(__name__)
@@ -244,7 +244,7 @@ class ModelVersionService:
         Initializes the service with configuration settings and Google Colab context.
 
         Args:
-            config (ForexMastermindConfig): Configuration object containing paths and settings.
+            config (PathBuilder): Configuration object containing paths and settings.
             in_google_colab (bool): Flag indicating execution within Google Colab environment.
         """
         self.config = config
@@ -674,7 +674,7 @@ class GetTrainedFeatures:
         Args:
             model_version (str): The version of the model for which features are to be retrieved.
         """
-        self.config = ForexMastermindConfig()
+        self.config = PathBuilder()
         self.model_version = model_version
         self.registry_df = self.load_model_registry()
 
@@ -721,7 +721,7 @@ class GetModelParams:
         Args:
             eval_list (list): A list of model versions for which hyperparameters are to be retrieved.
         """
-        self.config = ForexMastermindConfig()
+        self.config = PathBuilder()
         self.registry_df = FFDataLoader().load_data(data_path=self.config.get_model_registry_path())
         self.eval_list = eval_list
 
@@ -764,7 +764,7 @@ class GetTrainedSampleSize:
         Args:
             eval_list (list): A list of model versions for which training sample sizes are to be retrieved.
         """
-        self.config = ForexMastermindConfig()
+        self.config = PathBuilder()
         self.registry_df = FFDataLoader().load_data(data_path=self.config.get_model_registry_path())
         self.eval_list = eval_list
 
@@ -975,7 +975,7 @@ class ForexDataInverterService:
         Args:
             version (str): The version of the data to be processed.
         """
-        self.config = ForexMastermindConfig()
+        self.config = PathBuilder()
         self.version = version
         self.data_path = self.config.get_next_data_path(data_type='ForexData', training_data_version=version)
 

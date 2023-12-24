@@ -4,7 +4,7 @@ import csv
 import time
 
 
-class ForexMastermindConfig:
+class PathBuilder:
 
     def __init__(self, start_date='2018-01-01', end_date='2023-11-21', unseen_start_date='2023-11-20', unseen_end_date='2023-11-24'):
 
@@ -227,9 +227,9 @@ class ForexMastermindConfig:
 
 # Example usage
 # if __name__ == '__main__':
-#    config = ForexMastermindConfig()
+#    path_builder = PathBuilder()
 #    # Testing various data paths
-#    min_data_path = config.get_data_path('ForexData', '3.0.1')
-#    min_unseen_data_path = config.get_data_path('ForexData', '3.0.1', is_unseen=True)
-#    next_min_data_path = config.get_next_data_path('ForexData', '5')
-#    next_min_unseen_data_path = config.get_next_data_path('ForexData', '5', is_unseen=True)
+#    min_data_path = path_builder.get_data_path('ForexData', '3.0.1')
+#    min_unseen_data_path = path_builder.get_data_path('ForexData', '3.0.1', is_unseen=True)
+#    next_min_data_path = path_builder.get_next_data_path('ForexData', '5')
+#    next_min_unseen_data_path = path_builder.get_next_data_path('ForexData', '5', is_unseen=True)
