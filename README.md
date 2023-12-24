@@ -25,7 +25,7 @@ To get started with `master_mind`, ensure you have the following prerequisites:
 To install `master_mind`, clone the repository and set up a virtual environment:
 
 ```shell
-git clone https://github.com/your-repository/master_mind.git
+git clone https://github.com/frankie336/master_mind.git
 cd master_mind
 python -m venv venv
 source venv/bin/activate  # For Unix or MacOS

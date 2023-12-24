@@ -1,4 +1,5 @@
 # services/training_service/model_training_service.py
+import os
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -91,16 +92,22 @@ class ModelTrainingService:
 
     def save_checkpoint(self, epoch, loss):
         """Save model checkpoint."""
-        # Path construction for checkpoint saving
-        model_save_path = self.config.get('model_save_path', './models/')
+        try:
 
-        checkpoint_filename = f"model_epoch_{epoch}.pth"
-        path = f"{model_save_path}{checkpoint_filename}"
+            model_save_path = self.config.get('model_save_path', './models/')
 
-        torch.save({
-            'epoch': epoch,
-            'model_state_dict': self.model.state_dict(),
-            'optimizer_state_dict': self.optimizer.state_dict(),
-            'loss': loss,
-        }, path)
-        self.logger.info(f"Checkpoint saved: {path}")
+            os.makedirs(model_save_path, exist_ok=True)  # Ensure directory exists
+
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            checkpoint_filename = f"checkpoint_epoch_{epoch}_loss_{loss:.4f}_{timestamp}.pth"
+            path = os.path.join(model_save_path, checkpoint_filename)
+
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': self.model.state_dict(),
+                'optimizer_state_dict': self.optimizer.state_dict(),
+                'loss': loss,
+            }, path)
+            self.logger.info(f"Checkpoint saved: {path}")
+        except Exception as e:
+            self.logger.error(f"Failed to save checkpoint at {path}: {str(e)}")

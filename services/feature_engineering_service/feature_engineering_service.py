@@ -3,7 +3,7 @@ from services.common.tools import DateTimeFeatureService
 from services.feature_engineering_service.technicalIn_dicator_service import TechnicalIndicatorService
 from services.feature_engineering_service.target_feature_service import TargetFeatureService
 from services.feature_engineering_service.price_feature_service import PriceFeatureService
-from configs.config import ForexMastermindConfig
+from configs.path_builder import ForexMastermindConfig
 
 
 class FeatureEngineeringService:

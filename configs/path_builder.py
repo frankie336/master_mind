@@ -1,4 +1,4 @@
-# config.py
+# path_builder.py
 import os
 import csv
 import time

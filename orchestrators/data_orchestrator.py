@@ -1,7 +1,7 @@
 # orchestrators/data_orchestrator.py
 from infrastructure.builders import DataOrchestratorBuilder  # Adjust the import path as necessary
 from services.common.constants import API_KEY, START_DATE, END_DATE
-from configs.config import ForexMastermindConfig
+from configs.path_builder import ForexMastermindConfig
 
 
 import logging

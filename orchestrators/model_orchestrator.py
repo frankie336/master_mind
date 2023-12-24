@@ -1,6 +1,6 @@
 import time
 import torch
-from configs.config import ForexMastermindConfig
+from configs.path_builder import ForexMastermindConfig
 from services.common.tools import FFDataLoader
 from services.model_service.simple_classifier_service import SimpleBinaryClassifier
 from services.training_service.data_preprocessor_service import DataPreprocessor

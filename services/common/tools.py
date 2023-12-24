@@ -17,7 +17,7 @@ import requests
 import torch
 from textblob import TextBlob
 
-from configs.config import ForexMastermindConfig
+from configs.path_builder import ForexMastermindConfig
 from services.common.constants import API_KEY
 
 logger = logging.getLogger(__name__)

@@ -1,5 +1,5 @@
 import pandas as pd
-from configs.config import ForexMastermindConfig
+from configs.path_builder import ForexMastermindConfig
 
 
 class TradingNewsDataMergerService:
