@@ -1,6 +1,6 @@
 # orchestrators/data_orchestrator.py
 from services.common.constants import API_KEY, START_DATE, END_DATE, CURRENCY_PAIRS
-from infrastructure.infrastructure import DataOrchestratorBuilder
+from infrastructure.infrastructure import
 from configs.config import ForexMastermindConfig
 
 
@@ -38,10 +38,10 @@ if __name__ == '__main__':
     builder = DataOrchestratorBuilder(api_key=API_KEY, config=ForexMastermindConfig())
 
     # Build the DataOrchestrator with all the services configured
-    orchestrator = builder.build()
+    #orchestrator = builder.build()
 
     # Now you can use orchestrator to run the data pipeline
-    orchestrator.fetch_and_save_data()
+    #orchestrator.fetch_and_save_data()
 
 
 

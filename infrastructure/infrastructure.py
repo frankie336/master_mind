@@ -7,6 +7,8 @@ from services.fetch_service.economic_calendar_service import EconomicCalendarFet
 from services.fetch_service.Indicators_service import EconomicIndicatorsFetcherService
 from services.common.tools import SentimentAnalyzerService
 from services.feature_engineering_service.feature_engineering_service import FeatureEngineeringService
+from services.common.tools import DataFrameSaver
+from orchestrators.data_orchestrator import DataOrchestrator
 
 
 class DataOrchestratorBuilder:
@@ -57,7 +59,9 @@ class DataOrchestratorBuilder:
 
     def build_data_saver_service(self):
         # Instantiate and configure data saver service
-        # ...
+
+        data_saver_service = DataFrameSaver()
+
         return data_saver_service
 
     def build(self):

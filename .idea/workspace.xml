@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="Data feed cut over.">
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/feature_engineering_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/feature_engineering_service/target_feature_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/master_mind.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/master_mind.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="infrastructure.py">
+      <change afterPath="$PROJECT_DIR$/infrastructure/builders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/infrastructure.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/infrastructure.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orchestrators/data_orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrators/data_orchestrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/common/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/common/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/common/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/common/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/data_merger_service/news_data_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/data_merger_service/news_data_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/feature_engineering_service/price_feature_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/feature_engineering_service/price_feature_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/feature_engineering_service/technicalIn_dicator_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/feature_engineering_service/technicalIn_dicator_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/fetch_service/forex_price_data_chunk_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/fetch_service/forex_price_data_chunk_fetcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/fetch_service/news_fetcher_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/fetch_service/news_fetcher_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,25 +46,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_news_getcher_service.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cat_feature_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_orchestrator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.setting up.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/master__mind__feat&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_news_getcher_service.py.executor": "Run",
+    "Python.cat_feature_service.executor": "Run",
+    "Python.data_orchestrator.executor": "Run",
+    "Python.setting up.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/master__mind__feat",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />
@@ -251,7 +247,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703383217866</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feature_engineering_service">
+      <option name="closed" value="true" />
+      <created>1703389322402</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703389322402</updated>
+    </task>
+    <task id="LOCAL-00012" summary="infrastructure.py">
+      <option name="closed" value="true" />
+      <created>1703394753295</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703394753295</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +300,9 @@
     <MESSAGE value="news_data_service.py" />
     <MESSAGE value="TestNewsFetcherService" />
     <MESSAGE value="Data feed cut over." />
-    <option name="LAST_COMMIT_MESSAGE" value="Data feed cut over." />
+    <MESSAGE value="feature_engineering_service" />
+    <MESSAGE value="infrastructure.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="infrastructure.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/master_mind$data_orchestrator.coverage" NAME="data_orchestrator Coverage Results" MODIFIED="1703350593451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orchestrators" />
