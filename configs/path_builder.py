@@ -32,11 +32,20 @@ class PathBuilder:
         self.DATA_PROCESSING_TEMP_DIR = os.getenv('FOREXMASTERMIND_DATA_PROCESSING_TEMP_DIR',
                                                   '/media/primethanos/sql/ForexMastermind/ML/data_processing_temp')
 
+        self.FOREXMASTERMIND_CHECKPOINT_DIR = os.getenv('FOREXMASTERMIND_CHECKPOINT_DIR',
+                                                   '/media/primethanos/sql_drive/master_mind/checkpoints')
+
+        self.CHECKPOINT_DIR = self.FOREXMASTERMIND_CHECKPOINT_DIR
+
         # Date ranges
         self.start_date = start_date.replace('-', '')
         self.end_date = end_date.replace('-', '')
         self.unseen_start_date = unseen_start_date.replace('-', '')
         self.unseen_end_date = unseen_end_date.replace('-', '')
+
+    def get_checkpoint_directory(self):
+        """Returns the directory path for model checkpoints."""
+        return self.CHECKPOINT_DIR
 
     def get_live_data_dir(self):
         return os.getenv('FOREXMASTERMIND_LIVE_DATA_DIR', '/media/primethanos/sql/ForexMastermind/ML/live_data')
