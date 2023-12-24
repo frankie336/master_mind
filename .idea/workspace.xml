@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="deep_nn.py">
-      <change afterPath="$PROJECT_DIR$/configs/model_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/training_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/training_service/model_training_service.py" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="ModelTestingService">
+      <change afterPath="$PROJECT_DIR$/orchestrators/model_orchestrator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/training_service/data_preprocessor_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/training_service/model_evaluation_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +289,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703401816673</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ModelTrainingService">
+      <option name="closed" value="true" />
+      <created>1703405175911</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703405175911</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ModelTestingService">
+      <option name="closed" value="true" />
+      <created>1703405680592</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703405680592</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +345,9 @@
     <MESSAGE value="feature_engineering_service" />
     <MESSAGE value="infrastructure.py" />
     <MESSAGE value="deep_nn.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="deep_nn.py" />
+    <MESSAGE value="ModelTrainingService" />
+    <MESSAGE value="ModelTestingService" />
+    <option name="LAST_COMMIT_MESSAGE" value="ModelTestingService" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/master_mind$data_orchestrator.coverage" NAME="data_orchestrator Coverage Results" MODIFIED="1703350593451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orchestrators" />
