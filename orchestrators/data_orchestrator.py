@@ -10,7 +10,8 @@ from services.common.constants import CURRENCY_PAIRS
 
 
 class DataOrchestrator:
-    def __init__(self, price_data_fetcher, calendar_data_fetcher, news_fetcher, econ_indicator_fetcher, feature_engineer, data_saver):
+    def __init__(self, price_data_fetcher, calendar_data_fetcher,
+                 news_fetcher, econ_indicator_fetcher, feature_engineer, data_saver):
         self.price_data_fetcher = price_data_fetcher
         self.calendar_data_fetcher = calendar_data_fetcher
         self.news_fetcher = news_fetcher
