@@ -1,7 +1,6 @@
 # path_builder.py
 import os
 import csv
-import time
 
 
 class PathBuilder:

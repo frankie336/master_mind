@@ -1,4 +1,3 @@
-import time
 import torch
 from configs.path_builder import PathBuilder
 from services.common.tools import FFDataLoader
