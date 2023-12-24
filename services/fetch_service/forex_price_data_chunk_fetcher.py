@@ -8,12 +8,19 @@ from services.common.tools import DateRangeGenerator
 
 
 class ForexPriceDataChunkFetcher:
-    def __init__(self, parent_fetcher, start_date, end_date, api_key, live_data=False):
-        self.parent_fetcher = parent_fetcher
+    def __init__(self, start_date, end_date, api_key, currency_pairs, live_data=False):
         self.start_date = start_date
         self.end_date = end_date
         self.api_key = api_key
+        self.currency_pairs = currency_pairs  # List of currency pairs
         self.live_data = live_data
+
+    def fetch_price_data(self):
+        combined_data = pd.DataFrame()
+        for pair in tqdm(self.currency_pairs, desc="Fetching data for all pairs"):
+            pair_data = self.fetch_data_in_chunks(pair)
+            combined_data = pd.concat([combined_data, pair_data], ignore_index=True)
+        return combined_data
 
     def fetch_data_in_chunks(self, pair):
         all_data = []
@@ -34,15 +41,12 @@ class ForexPriceDataChunkFetcher:
                             all_data.append(df)
                             successful = True
                     else:
-
                         retry_count += 1
                         time.sleep(5)
                 except Exception as e:
-
                     retry_count += 1
                     time.sleep(5)
         if all_data:
-            data_df = pd.concat(all_data, ignore_index=True)
-            return data_df
+            return pd.concat(all_data, ignore_index=True)
         else:
             return pd.DataFrame()

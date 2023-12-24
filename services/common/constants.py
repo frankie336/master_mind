@@ -5,6 +5,9 @@ load_dotenv()
 API_KEY = os.getenv('FINANCIAL_MODELING_PREP_API_KEY')
 
 
+START_DATE = '2016-01-01'
+END_DATE = '2023-11-21'
+
 CURRENCY_PAIRS = ["EURUSD", "USDJPY", "GBPUSD", "USDCHF", "AUDUSD", "USDCAD", "NZDUSD"]
 
 INDICATORS = ['GDP', 'realGDP', 'nominalPotentialGDP', 'realGDPPerCapita',
