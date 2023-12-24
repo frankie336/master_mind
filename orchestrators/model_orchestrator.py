@@ -74,6 +74,6 @@ if __name__ == '__main__':
      path_builder = PathBuilder()
      file_path = path_builder.get_next_data_path(data_type='ForexData', training_data_version='11')
 
-     orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, path_builder=config, model_config=model_config, file_path=file_path,
+     orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, path_builder=path_builder, model_config=model_config, file_path=file_path,
                                       in_google_colab=False, google_model_path=None, google_reg_path=None)
      orchestrator.run()
