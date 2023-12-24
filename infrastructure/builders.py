@@ -1,5 +1,5 @@
 # infrastructure/builders.py
-from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
+from services.fetch_service.price_data_chunk_fetcher import ForexPriceDataChunkFetcher
 from services.fetch_service.economic_calendar_service import EconomicCalendarFetcherService
 from services.fetch_service.Indicators_service import EconomicIndicatorsFetcherService
 from services.fetch_service.news_fetcher_service import NewsFetcherService

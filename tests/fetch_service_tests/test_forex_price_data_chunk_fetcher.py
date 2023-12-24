@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
+from services.fetch_service.price_data_chunk_fetcher import ForexPriceDataChunkFetcher
 import pandas as pd
 from io import StringIO
 

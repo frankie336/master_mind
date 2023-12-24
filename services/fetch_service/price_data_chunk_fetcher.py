@@ -1,4 +1,4 @@
-# services/fetch_service/forex_price_data_chunk_fetcher.py
+# services/fetch_service/price_data_chunk_fetcher.py
 from datetime import datetime, timedelta
 from tqdm import tqdm
 import time

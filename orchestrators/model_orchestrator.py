@@ -1,8 +1,7 @@
 import time
-import os
 import torch
 from configs.config import ForexMastermindConfig
-from services.common.tools import FFDataLoader, ModelVersionService
+from services.common.tools import FFDataLoader
 from services.model_service.simple_classifier_service import SimpleBinaryClassifier
 from services.training_service.data_preprocessor_service import DataPreprocessor
 from services.training_service.model_training_service import ModelTrainingService
@@ -55,7 +54,7 @@ class ModelOrchestrator:
         trained_model, best_loss, total_samples_trained, training_time = model_training_service.train_model()
 
         # Execute Testing Service
-        model_testing_service = ModelTestingService(model=trained_model, batch_size=self.batch_size,
+        model_testing_service = ModelTestingService(model=trained_model,
                                                     testing_loader=test_loader, config=self.config, in_google_colab=self.in_google_colab)
         model, avg_test_loss, test_accuracy = model_testing_service.test_model()
 
@@ -66,6 +65,7 @@ class ModelOrchestrator:
                                                           in_google_colab=self.in_google_colab, google_model_path=self.google_model_path,
                                                           google_reg_path=self.google_reg_path)
         model_evaluation_service.evaluate(test_avg_test_loss=avg_test_loss, test_accuracy=test_accuracy)
+
 
 # Usage Example (Uncomment to test)
 if __name__ == '__main__':

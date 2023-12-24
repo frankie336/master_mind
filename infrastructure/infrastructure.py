@@ -1,6 +1,6 @@
 # infrastructure/infrastructure.py
 from services.common.constants import API_KEY, CURRENCY_PAIRS
-from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
+from services.fetch_service.price_data_chunk_fetcher import ForexPriceDataChunkFetcher
 from services.common.constants import START_DATE, END_DATE
 from services.fetch_service.news_fetcher_service import NewsFetcherService
 from services.fetch_service.economic_calendar_service import EconomicCalendarFetcherService
