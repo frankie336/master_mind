@@ -63,9 +63,12 @@ class ModelOrchestrator:
 
         # Execute Evaluation Service
         model_evaluation_service = ModelEvaluationService(model=trained_model, batch_size=self.batch_size,
-                                                          get_hyperparameters_str=trained_model.get_hyperparameters_str(), training_time=training_time,
-                                                          eval_loader=val_loader, features=features, path_builder=self.path_builder,
-                                                          in_google_colab=self.in_google_colab, google_model_path=self.google_model_path,
+                                                          get_hyperparameters_str=trained_model.get_hyperparameters_str(),
+                                                          training_time=training_time,eval_loader=val_loader,
+                                                          features=features, path_builder=self.path_builder,
+                                                          model_version_service=self.model_version_service,
+                                                          in_google_colab=self.in_google_colab,
+                                                          google_model_path=self.google_model_path,
                                                           google_reg_path=self.google_reg_path)
         model_evaluation_service.evaluate(test_avg_test_loss=avg_test_loss, test_accuracy=test_accuracy)
 

@@ -125,7 +125,7 @@ class ModelEvaluationService:
     def _write_metadata_to_registry(self, metadata):
 
         model_registry_path = os.path.join(
-            self.config.get_model_directory(in_google_colab=self.in_google_colab), 'nn_model_registry_.csv')
+            self.path_builder.get_model_directory(in_google_colab=self.in_google_colab), 'nn_model_registry_.csv')
 
         # Check if the registry file exists, if not, create it with headers
         if not os.path.isfile(model_registry_path):
@@ -267,7 +267,7 @@ class ModelEvaluationService:
         """
         Save the evaluation plots to a specified directory.
         """
-        plot_directory = self.config.get_plot_directory(in_google_colab=self.in_google_colab)
+        plot_directory = self.path_builder.get_plot_directory(in_google_colab=self.in_google_colab)
         model_version = self.model_version_service.get_current_model_version()
         plot_filename = f"IntraDayForexPredictor_v{model_version}_evaluation.png"
         plot_path = os.path.join(plot_directory, plot_filename)

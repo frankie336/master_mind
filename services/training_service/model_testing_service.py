@@ -3,15 +3,17 @@ import torch.nn as nn
 import logging
 import time
 from tqdm import tqdm
+from configs.model_config import model_config
 
 
 class ModelTestingService:
     def __init__(self, model, testing_loader, path_builder, in_google_colab=False):
+
         self.model = model
         self.testing_loader = testing_loader  # DataLoader instance
         self.path_builder = path_builder
         self.in_google_colab = in_google_colab
-        self.criterion = nn.CrossEntropyLoss() if config['loss'] == 'CE' else nn.BCELoss()
+        self.criterion = nn.CrossEntropyLoss() if model_config['loss_function'] == 'CE' else nn.BCELoss()
 
         self.logger = logging.getLogger(__name__)
         self.setup_logging()

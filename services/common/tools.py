@@ -258,6 +258,9 @@ class ModelVersionService:
             List of tuples: Each tuple contains version numbers (MAJOR, MINOR, PATCH) for each model.
         """
         model_dir = self.config.get_model_directory(in_google_colab=self.in_google_colab)
+
+        print('The model dir:', model_dir)
+
         pattern = re.compile(r'IntraDayForexPredictor_v(\d+)\.(\d+)\.(\d+)\.(sav|pt)')
         versions = []
 
