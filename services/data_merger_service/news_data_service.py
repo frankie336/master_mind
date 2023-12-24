@@ -1,3 +1,5 @@
+import pandas as pd
+from configs.config import ForexMastermindConfig
 
 
 class TradingNewsDataMergerService:

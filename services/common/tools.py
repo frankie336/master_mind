@@ -1,4 +1,4 @@
-# utils.py
+# services/common/tools.py
 import ast
 import hashlib
 import json
@@ -21,6 +21,30 @@ from configs.config import ForexMastermindConfig
 from services.common.constants import API_KEY
 
 logger = logging.getLogger(__name__)
+
+
+class DateTimeFeatureService:
+    def __init__(self, data):
+        self.data = data
+
+    def add_datetime_features(self):
+
+        self.convert_to_datetime()
+        self._add_time_of_day()
+
+        return self.data
+
+    def convert_to_datetime(self):
+        """Converts the 'date' column to datetime format."""
+        self.data['date'] = pd.to_datetime(self.data['date'])
+
+        return self.data
+
+    def _add_time_of_day(self):
+        """Adds a column with the time of day encoded as a fraction."""
+        self.data['time_of_day'] = (self.data['date'].dt.hour * 3600 +
+                                    self.data['date'].dt.minute * 60 +
+                                    self.data['date'].dt.second) / (24 * 3600)
 
 
 class SentimentAnalyzerService:

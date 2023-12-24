@@ -1,3 +1,4 @@
+# services/fetch_service/news_fetcher_service.py
 from time import time
 from datetime import datetime
 import random

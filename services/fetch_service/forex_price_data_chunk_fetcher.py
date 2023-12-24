@@ -12,7 +12,7 @@ class ForexPriceDataChunkFetcher:
         self.start_date = start_date
         self.end_date = end_date
         self.api_key = api_key
-        self.currency_pairs = currency_pairs  # List of currency pairs
+        self.currency_pairs = currency_pairs
         self.live_data = live_data
 
     def fetch_price_data(self):

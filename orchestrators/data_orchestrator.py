@@ -1,6 +1,6 @@
+# orchestrators/data_orchestrator.py
 import time
 from services.fetch_service.forex_price_data_chunk_fetcher import ForexPriceDataChunkFetcher
-from services.fetch_service.news_fetcher_service import NewsFetcherService
 from services.common.constants import API_KEY, START_DATE, END_DATE, CURRENCY_PAIRS
 
 
@@ -16,8 +16,15 @@ class DataOrchestrator:
     def fetch_and_save_data(self):
         # Fetching price data and feature engineering
         price_data_df = self.price_data_fetcher.fetch_data()
+
+        currency_pairs = CURRENCY_PAIRS.copy()
+        fetcher = ForexPriceDataChunkFetcher(start_date=START_DATE, end_date=END_DATE, api_key=API_KEY,
+                                             currency_pairs=currency_pairs)
+
+        price_data_df = fetcher.fetch_price_data()
+
         price_data_processed = self.feature_engineer.add_price_features(price_data_df)
-        self.data_saver.save_data(price_data_processed, 'price_data_processed.csv')
+        #self.data_saver.save_data(price_data_processed, 'price_data_processed.csv')
 
         # Fetching economic calendar data and feature engineering
         calendar_data_df = self.calendar_data_fetcher.fetch_calendar_data()
@@ -34,10 +41,6 @@ class DataOrchestrator:
 
 
 if __name__ == '__main__':
-    currency_pairs = CURRENCY_PAIRS.copy()
-    fetcher = ForexPriceDataChunkFetcher(start_date=START_DATE, end_date=END_DATE, api_key=API_KEY,
-                                         currency_pairs=currency_pairs)
-
-    combined_data = fetcher.fetch_price_data()
+    DataOrchestrator = DataOrchestrator()
 
 
