@@ -1,3 +1,4 @@
+import time
 import torch
 from configs.config import ForexMastermindConfig
 from services.common.tools import FFDataLoader, ModelVersionService
@@ -68,4 +69,4 @@ if __name__ == '__main__':
      file_path = config.get_next_data_path(data_type='ForexData', training_data_version='20')
      orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, config=config, model_config=model_config, file_path=file_path,
                                       in_google_colab=False, google_model_path=None, google_reg_path=None)
-     orchestrator.run()
+     #orchestrator.run()
