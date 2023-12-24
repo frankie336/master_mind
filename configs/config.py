@@ -48,6 +48,10 @@ class ForexMastermindConfig:
         else:
             return self.MODEL_DIR
 
+    def get_feature_importance_directory(self):
+        """Returns the directory path for feature importance files."""
+        return self.FEATURE_IMPORTANCE_DIR
+
     def get_scaler_directory(self, in_google_colab=False):
 
         if in_google_colab:
@@ -65,8 +69,16 @@ class ForexMastermindConfig:
     def get_feature_importance_directory(self):
         return self.FEATURE_IMPORTANCE_DIR
 
+    def create_path(self, base, subpath):
+        """Creates an absolute path from the given base and subpath."""
+        return os.path.abspath(os.path.join(base, subpath))
+
     def get_feature_importance_directory(self):
         return self.FEATURE_IMPORTANCE_DIR
+
+    def get_shap_plot_path(self, version):
+        """Returns the path for the SHAP plot."""
+        return os.path.join(self.PLOT_DIR, f"IntraDayForexPredictor_v{version}_shap.png")
 
     def get_data_processing_temp_directory(self):
         return self.DATA_PROCESSING_TEMP_DIR
@@ -214,67 +226,10 @@ class ForexMastermindConfig:
 
 
 # Example usage
-if __name__ == '__main__':
-    config = ForexMastermindConfig()
-
-    # Testing various data paths
-    min_data_path = config.get_data_path('ForexData', '3.0.1')
-    min_unseen_data_path = config.get_data_path('ForexData', '3.0.1', is_unseen=True)
-    next_min_data_path = config.get_next_data_path('ForexData', '5')
-    next_min_unseen_data_path = config.get_next_data_path('ForexData', '5', is_unseen=True)
-    # Testing model, scaler, and plot paths
-    model_path = config.get_standard_model_path('3.0.1')
-    scaler_path = config.get_scaler_path('3.0.1')
-    plot_path = config.get_plot_path('3.0.1')
-    # Printing the paths for verification
-    print("Min Data Path:", min_data_path)
-    print("Min Unseen Data Path:", min_unseen_data_path)
-    print("Next Min Data Path:", next_min_data_path)
-    print("Next Min Unseen Data Path:", next_min_unseen_data_path)
-    print("Model Path:", model_path)
-    print("Scaler Path:", scaler_path)
-    print("Plot Path:", plot_path)
-    # Testing best hyperparameters path
-    hyperparams_path = config.get_hyperparams_path()
-    print("Hyperparameters Path:", hyperparams_path)
-    # Testing news data paths
-    news_data_path = config.get_news_data_path('3')
-    unseen_news_data_path = config.get_news_data_path('3', is_unseen=True)
-    live_news_data_path = config.get_news_data_path('3', is_live_data=True)
-
-    print("News Data Path:", news_data_path)
-    print("Unseen News Data Path:", unseen_news_data_path)
-    print("Live News Data Path:", live_news_data_path)
-
-    """
-    # Getting model directory
-    model_directory = config.get_model_directory()
-    print("Model Directory:", model_directory)
-    # Getting scaler directory
-    scaler_directory = config.get_scaler_directory()
-    print("Scaler Directory:", scaler_directory)
-    # Getting plot directory
-    plot_directory = config.get_plot_directory()
-    print("Plot Directory:", plot_directory)
-    # Testing inverted model path
-    inverted_model_path = config.get_inverted_model_path('3.0.1')
-    print("Inverted Model Path:", inverted_model_path)
-    # Testing inverted data path
-    inverted_data_path = config.get_inverted_data_path('ForexData', '5')
-    print("Inverted Data Path:", inverted_data_path)
-    economic_data_path = config.get_economic_indicators_data_path(model_version='1')
-    unseen_economic_data_path = config.get_economic_indicators_data_path(model_version='1', is_unseen=True)
-    print("Economic indicator Data Path:", economic_data_path)
-    print("Unseen Economic indicator Data Path:", unseen_economic_data_path)
-    prediction_log_path = config.get_prediction_log_path()
-    print("Prediction Log Path:", prediction_log_path)
-    """
-    # test = config.get_plot_directory(in_google_colab=True)
-    # print(test)
-    model_path = config.get_deepnn_model_path('4.0.5')
-
-    print(model_path)
-
-
-
-
+# if __name__ == '__main__':
+#    config = ForexMastermindConfig()
+#    # Testing various data paths
+#    min_data_path = config.get_data_path('ForexData', '3.0.1')
+#    min_unseen_data_path = config.get_data_path('ForexData', '3.0.1', is_unseen=True)
+#    next_min_data_path = config.get_next_data_path('ForexData', '5')
+#    next_min_unseen_data_path = config.get_next_data_path('ForexData', '5', is_unseen=True)

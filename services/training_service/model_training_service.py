@@ -10,8 +10,9 @@ from tqdm import tqdm
 
 
 class ModelTrainingService:
-    def __init__(self, model, train_loader, model_config, config, model_version_service,
-                 in_google_colab=False):
+    def __init__(self, model, train_loader, model_config, config,
+                 model_version_service, google_model_path=False,
+                 google_reg_path=False,in_google_colab=False):
 
         self.model = model
         self.train_loader = train_loader
@@ -19,9 +20,13 @@ class ModelTrainingService:
         self.config = config
         self.model_version_service = model_version_service
         self.in_google_colab = in_google_colab
+        self.google_model_path = google_model_path
+        self.config = google_reg_path
 
         # Model loss function
-        self.criterion = nn.BCELoss() if self.model_config['loss'] == 'BCE' else nn.CrossEntropyLoss()
+        #self.criterion = nn.BCELoss() if self.model_config['loss'] == 'BCE' else nn.CrossEntropyLoss()
+        self.criterion = nn.BCELoss() if self.model_config.get('loss',
+                                                               'default_loss') == 'BCE' else nn.CrossEntropyLoss()
 
         self.logger = logging.getLogger(__name__)
         self.setup_logging()

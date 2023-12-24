@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="configs/model_config.py">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="6fd89cbd-dc82-411b-942d-5ee36de88228" name="Changes" comment="requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrators/model_orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrators/model_orchestrator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/training_service/model_training_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/training_service/model_training_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +66,7 @@
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
       "Python"
     ]
   }
@@ -344,7 +344,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703411232099</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="csv">
+      <option name="closed" value="true" />
+      <created>1703414252744</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703414252745</updated>
+    </task>
+    <task id="LOCAL-00021" summary="requirements.txt">
+      <option name="closed" value="true" />
+      <created>1703415618391</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703415618391</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +404,9 @@
     <MESSAGE value="ModelTestingService" />
     <MESSAGE value="ModelOrchestrator" />
     <MESSAGE value="configs/model_config.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="configs/model_config.py" />
+    <MESSAGE value="csv" />
+    <MESSAGE value="requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/master_mind$data_orchestrator.coverage" NAME="data_orchestrator Coverage Results" MODIFIED="1703350593451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orchestrators" />
