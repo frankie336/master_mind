@@ -1,4 +1,5 @@
 import time
+import os
 import torch
 from configs.config import ForexMastermindConfig
 from services.common.tools import FFDataLoader, ModelVersionService
@@ -7,6 +8,8 @@ from services.training_service.data_preprocessor_service import DataPreprocessor
 from services.training_service.model_training_service import ModelTrainingService
 from services.training_service.model_testing_service import ModelTestingService
 from services.training_service.model_evaluation_service import ModelEvaluationService
+from configs.model_config import model_config
+from services.common.tools import ModelVersionService
 
 
 class ModelOrchestrator:
@@ -20,6 +23,8 @@ class ModelOrchestrator:
         self.in_google_colab = in_google_colab
         self.google_model_path = google_model_path
         self.google_reg_path = google_reg_path
+        self.model_config = model_config
+        self.model_version_service = ModelVersionService
 
         # Configuration settings
         self.config = config if config is not None else ForexMastermindConfig()
@@ -64,9 +69,10 @@ class ModelOrchestrator:
 
 # Usage Example (Uncomment to test)
 if __name__ == '__main__':
+
      config = ForexMastermindConfig()
-     model_config = {"epochs": 10, "learning_rate": 0.001, "checkpoint_interval": 5}
-     file_path = config.get_next_data_path(data_type='ForexData', training_data_version='20')
+     file_path = config.get_next_data_path(data_type='ForexData', training_data_version='11')
+
      orchestrator = ModelOrchestrator(sample_size=0.01, batch_size=32, config=config, model_config=model_config, file_path=file_path,
                                       in_google_colab=False, google_model_path=None, google_reg_path=None)
-     #orchestrator.run()
+     orchestrator.run()

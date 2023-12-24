@@ -1,6 +1,7 @@
 # config.py
 import os
 import csv
+import time
 
 
 class ForexMastermindConfig:
@@ -8,7 +9,8 @@ class ForexMastermindConfig:
     def __init__(self, start_date='2018-01-01', end_date='2023-11-21', unseen_start_date='2023-11-20', unseen_end_date='2023-11-24'):
 
         self.BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-        self.NEW_DATA_DIR = os.getenv('FOREXMASTERMIND_NEW_DATA_DIR', '/media/primethanos/sql/ForexMastermind/ML/data')
+        self.NEW_DATA_DIR = os.getenv('FOREXMASTERMIND_NEW_DATA_DIR', 'media/primethanos/sql/ForexMastermind/ML/data')
+
         self.UNSEEN_DATA_DIR = os.getenv('FOREXMASTERMIND_UNSEEN_DATA_DIR', '/media/primethanos/sql/ForexMastermind/ML/unseen_data')
         self.GOOGLE_DATA_DIR = '/content/drive/MyDrive/PythonColabProjects/data/'
 
