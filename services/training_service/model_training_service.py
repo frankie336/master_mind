@@ -24,12 +24,10 @@ class ModelTrainingService:
         self.config = google_reg_path
 
         # Model loss function
-        #self.criterion = nn.BCELoss() if self.model_config['loss'] == 'BCE' else nn.CrossEntropyLoss()
         self.criterion = nn.BCELoss() if self.model_config.get('loss',
                                                                'default_loss') == 'BCE' else nn.CrossEntropyLoss()
 
         self.logger = logging.getLogger(__name__)
-        self.setup_logging()
 
         # Optimizer setup
         self.optimizer = optim.Adam(
@@ -37,16 +35,6 @@ class ModelTrainingService:
             lr=self.model_config.get('learning_rate', 0.001)
         )
 
-    def setup_logging(self):
-        """Configure logging for the training service."""
-        logging_level = self.config.get('logging_level', logging.INFO)
-        logging_format = self.config.get('logging_format', '%(asctime)s - %(levelname)s - %(message)s')
-        if self.in_google_colab:
-            logging.basicConfig(level=logging_level, format=logging_format)
-        else:
-            log_filename = self.config.get('log_filename', 'training.log')
-            logging.basicConfig(level=logging_level, format=logging_format,
-                                filename=log_filename, filemode='a')
 
     def train_model(self):
         start_time = datetime.now()
@@ -105,6 +93,7 @@ class ModelTrainingService:
         """Save model checkpoint."""
         # Path construction for checkpoint saving
         model_save_path = self.config.get('model_save_path', './models/')
+
         checkpoint_filename = f"model_epoch_{epoch}.pth"
         path = f"{model_save_path}{checkpoint_filename}"
 
