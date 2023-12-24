@@ -56,7 +56,7 @@ class ModelOrchestrator:
 
         # Execute Testing Service
         model_testing_service = ModelTestingService(model=trained_model,
-                                                    testing_loader=test_loader, path_builder=self.config, in_google_colab=self.in_google_colab)
+                                                    testing_loader=test_loader, path_builder=self.path_builder, in_google_colab=self.in_google_colab)
         model, avg_test_loss, test_accuracy = model_testing_service.test_model()
 
         # Execute Evaluation Service
